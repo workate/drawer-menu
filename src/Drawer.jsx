@@ -229,6 +229,9 @@ class Drawer extends React.PureComponent {
       }
     });
     // 处理 body 滚动
+    if (typeof document === 'undefined') {
+      return;
+    }
     if (open) {
       document.body.addEventListener('mousewheel', this.removeScroll);
       document.body.addEventListener('touchmove', this.removeScroll);
